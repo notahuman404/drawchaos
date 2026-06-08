@@ -129,7 +129,8 @@ one moment it can be 4x other moment it can be 0.1x there are 4 speeds in thsi
 2x 
 4x 
 later analysis: kept in 
-33.
+33. hand jitter: the cursor shakes vigorosly so every stroke looks like it was drawn by a kida
+later analysis: kept in 
 
 
 
@@ -140,4 +141,47 @@ who plays so it will be worth it. I will actually now take a break and then get 
 One point i have to make, i haev half completed room_manager.py but not commiting it, i will commit It
 once it is completed and i have thought of all the twists that i wanna keep 
 
-34.
+34. double cursor: the user controls 2 cursor
+final analysis: kept out 
+
+35. pixelated vision: coustom number of guesser see pixelated vision while the drawer sees the canvas in full vision
+Suggestion: i would suggest the user to keep it as all the guessers so its fair and fun
+later analysis: kept in 
+
+36. color cant been seen by one random guesser 
+later analysis: kept out 
+
+37. the entire canvas  is fully foggy for every guesser the the drawer sees it with full resolution 
+final analysis: kept in 
+38. ai suggested this one 
+The drawer starts in full color. Every 15 seconds, one color channel drops out from their view — first red disappears, then green, then blue. By 45 seconds in, the drawer is seeing in pure grayscale. They no longer know what colors they're actually using — they think they're drawing in green but that channel is gone and it's showing as something else to guessers. Guessers always see full color. The challenge is communicating through color without being able to see it.
+final analysis: kept in
+39. fake word 
+he drawer gets shown two words: the real one and a fake one. They're told which is which. But guessers are also shown one word each — some get the real word, some get the fake one — and they have to guess which word is actually being drawn, not just what it is.
+final analysis: kept in 
+40. jury 
+drawing from previous round are shown and voters vote on which resembles the word 
+final analysis: kept in 
+
+41. copycat 
+everyone gets the idea to draw and copy the style of previous winning paiting
+they vote and voting dedicdes whether they win or not 
+final analysis: kept in
+42. silent treatment, guesser cant talk or type they can just do is react with emojis
+final analysis: kept out
+43. Idea: After every 10 seconds, the server broadcasts to the drawer how close the best current guess is to the correct answer — purely as "warmer" or "colder" — but doesn't show the actual guess. The drawer has no idea what people are guessing, just whether they're getting closer.
+final analysis : kept in 
+44. the players vote the one guy who drew the worst throwing the round, the one who gets voted out 
+gets thier points deducted and the deductaed amount would be 2*average_score_per_round
+final anaylysis: kept in 
+45. one person draws but thier username and everythign gets hidden -> the user have to guess who drew and the 
+drawer has to try and bot get voted out 
+final analysis: kept in 
+
+46. rewind: at the random point of time, the canvas gets set to how it was 20 seconds ago
+final analysis: kept in 
+47. 2–4 players per round are secretly designated as thieves at round start — only they know. They have a "steal" button that, when pressed, shows them a ghosted preview of one random stroke from a target player's canvas. They can choose to take it or skip. If they take it, that stroke vanishes from the victim's canvas and appears on theirs. The skill is blending it in. After the round, everyone votes on which strokes looked "foreign" on each canvas. Caught thieves lose points; uncaught thieves score a bonus. Count of thieves is customisable via thief_count in room settings (default: 2, capped at player count minus 1).
+above one is kept in 
+
+49. another ai suggested one, whih i have decided to keep in 
+ The snail doesn't just chase your cursor position — it pathfinds along the actual stroke trail you've drawn on the canvas, using your lines like roads. Even after you lift your mouse, the snail is crawling along your previous strokes toward wherever you are now. Your own drawing becomes the thing hunting you. A dense complex drawing is a death trap — you've built the snail a highway network directly to you. Sparse minimalist drawers survive longer. If the snail reaches your cursor at any point — mid-stroke or resting — you're out.
