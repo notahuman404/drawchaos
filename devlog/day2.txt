@@ -1,0 +1,143 @@
+Just started day 2 and thinking to get a lot of work done today 
+I have now dedicided to stop joking around and make good comments + some doc strings instead of leacing it 
+upto the person reading to know what everything does
+
+Well now at this current moment i have half completed the player room manager file 
+
+Realized a flaw that __pycache__ was also getting commited, fixed it now. I will have to push when 
+the room_manager.py file get completed otherwise i would end up with messy un-understandable commits
+I know i havent done a very great job at writing good understandable code so far but now i will so 
+if anyone reading my dev logs then i did a blessing on you. I dont even think anyone is going to read this
+so i am just coming here to write if i feel like stuck or just wanna get some of my thoughts out 
+
+Got really stuck at create room -> unable to find out what should i do or which things should i keep for 
+a room, i think i am going to first have to create a file which contains the twists to properly think this through
+
+I am now just gonna write out the ideas i have and lets see the ones i accept
+
+1. Imposter: everyone gets same word to draw on just the imposter who is randomly selected gets a different
+word, that is they get the category for example if everyone has peigioin or sparrow the imp. gets bird
+later analysis: This one is kept in 
+
+2. everyone gets random word and then at the end all of the people together decide which word matches 
+whcih drawing
+later analysis: less fun and chaotic but keeping it in because the later chaos will even it out 
+
+3. one player gets the word, everyone else guesses, all draw on same canvas 
+later analysis: this is kept in 
+
+4. elimination: at the end of each round the player with least votes lose, last man standing wins
+later analysis: kept in(i just like the destruction between friends)
+
+5. reverse good round(i am not able to think of a name right now for this): 
+everyone given a word and everyone draws badly on pourpose, the twist is that they have to draw with a 
+technique like too abstract too many randomly lines etc. and vote based upon that 
+later analysis: kept in 
+
+
+6. cursor hijack: mid draw a radon person gets the access and hijacks some other random persons mouse
+they can do whatever they want the hijacker sees a small side panel on thier screen(expandable ), showing
+victims canvas not thier word, they can sabotage or help thier choice. Strokes replay at the end to show 
+which lines were after the hijack. also i think there should be a notification to victim just notification nothing else
+later anaylsis: kept in
+
+7. one person draws completely blind thier canvas is not visible to them tried to guess it 
+later analysis: kept in 
+8. blackout: simple every 10 second the drawers screen goes black for eaxctly 10 seconds then comes back 
+later analysis: kept out 
+
+9.  Drunk cursor: every storke thier cursor dirfts 20-40px of thier intended position
+later analysis: kept in 
+
+10. mirror: the drawers cnavas is veritcally inversed, everyone else sees normal so even if the drawer draws 
+normally then the viewers see inversed version
+
+later analysis: kept in  
+
+11. One player gets exactly 10 strokes for the whole round, no undo. After stroke 10 they are out.
+everyone else enjoys unlimited strokes, at the end of the round they are voted seprately on based upon thier
+stroke economy crises 
+
+12. One player's color picker is randomized every 5 seconds by the server. They can't control what color they're drawing in. Everything else is normal. (Yup i used ai to get this idea not fully mine)
+later analysis: kept in 
+
+13. one person draws and other person knows the word, the person who knows the word gives clue to the drawer what the word is to draw about 
+the last person guesses 
+later analysis: kept in
+
+14. sudden freeze: at the random point of time no one can draw on tier canvases 
+later analysis: boring, kept out 
+
+15. mid word change: mid drawing word changes for the drawer and they have to now make the drawing represent the new word 
+without making it obvious to the guessers
+later analysis: kept in
+16. if any spectator gives more than 5 emojis per 3 seconds then crowd vote take over happens where they 
+collectivly choose to flip some persons canva 
+later analysis: kept in 
+
+17. After every round, the full stroke-by-stroke replay of all canvases plays back at 3x speed. Players vote on the single funniest moment in the replay. Whoever's stroke gets the most votes earns a bonus point.
+analysis: kept in 
+
+18. at the end each paiting is given to some random person to decide who drew it 
+later analysis: kept out 
+
+19. icy canvas, the canvas acts like ice, the cursor slips on it. It doesnt stop where the user wants
+it keep slowly sliding and deaccelerating 
+later analysis: kept in 
+
+20. the cursors get swapped with a random person mid round, this happens to everyone only 1/3 of the Players
+know about this in advance after 10 second everything goes back normal, all players are pairied with each other 
+later analysis: kept in 
+21. shriking canvas: the canvas shrinks with time
+later analysis: kept out 
+
+22. earthquake: nothign happens when the user is not drawing, as soon as they start drawing a random time from 1 to 10 seconds get picked 
+when that time ends the canvas sakes vigorously shaking few moments after they lift thier mouse 
+later analysis: kept in 
+
+23. newtons gravity: every stroke falls after some time, 
+later analysis: kept out because not fun enough 
+
+24. ivisible ink: the thing that the drawer drew is invisible but suddenly after 8 seconds it starts revealing itself
+later analysis: kept out
+
+25. dissolving lines: lines start falling after 15 seconds like as if they were melting
+later analysis: kept out 
+
+26. zoom trap: randomly the cavas either zooms in or zoom out too much that it annoys the drawer the
+guessers see the full canvas at the same time 
+later analysis: kept in
+27. jello: strokes are drawn with slight delay and wobble a little 
+later analysis: kept out 
+28. pixel erosion: pixels kida erod away with time 
+later analysis: kept out 
+
+29. scroll whell brush: the only way to change size of the brush is the scroll wheel but it 
+randoly changes to a random size it can get bigger or smaller without the users command
+
+30. full inverse: the axis are inversed like if the user moves his mouse up it goes down
+if left then right, it find the fully inversed version by adding 180 degrees to the angle or subtracting 180 degrees
+if greater than 180 then executing that angle 
+
+31. laggy player: one player expiriences lag, they have input latency of 1 second, everything they draw gets 
+drawn after a second they will see a ghost of where thier cursor is vs where the strokes will be 
+later analysis :kept out 
+32. radom speed change: person's cursor speed changes fomr extreme to minimal every random interval 
+one moment it can be 4x other moment it can be 0.1x there are 4 speeds in thsi 
+0.1x 
+0.5x 
+2x 
+4x 
+later analysis: kept in 
+33.
+
+
+
+
+I am now not able to think of other ideas, but i will make my brain struggle for it, this is taking 
+a lot of time, a lot more than i expected it to. BUt till i am making it trying to make it fun for everyone
+who plays so it will be worth it. I will actually now take a break and then get back to this later 
+One point i have to make, i haev half completed room_manager.py but not commiting it, i will commit It
+once it is completed and i have thought of all the twists that i wanna keep 
+
+34.
