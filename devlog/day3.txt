@@ -1,0 +1,48 @@
+Another day another task 
+Today i am going to be completeing the twist engine backend, i am supposing 
+it wont take much long because i can make the twist registery quite quickly actually 
+using ai 
+
+Well one mistake occured, that is i created a single twist register 
+not big of a deal i can just split it using some simple code 
+
+Ran into another issue now, some twists conflict with other 
+Like collective canvas doesnt and cant be with stroke thief trying to come up with a solution for it 
+
+
+One solution is that i block the conflicting ones by creating a map that tells which ones conflict and then 
+blocks one of them 
+
+One issue is that it reduces number of twists 
+
+I now think i should include one subtitue function which subtitues that twist for a non-conflicting one 
+Another issue is what if there is blind drawer, mirror only and collective canvas for ex
+then the code which ever comes first for ex if collective came first then it removes 
+rest of conflicting ones 
+
+One solution is that remove based upon the non conflicting ones instead of conflicting ones. This 
+sounds abstract but basically what i am thinking to do is 
+
+collective canvas, icy canvas and blind drawer, 
+here 1 conflicts with 2 so the most optimal solution would be to impose that the 
+most conflicting one which has conflicts with most of the twists gets removed 
+IDK how this solution will turn out but it will quite good i think so 
+IDK if this will reduces the changes of fun twists but i think it should work 
+if not then i will just remove 3 most conflicting twists altogether to fix the issue 
+i hope i dont have to do that 
+
+Didnt expect just the twist selection to take me around one hour 15 minutes, this was the hardest 
+part yet because first i had to make the registrery then find the solution to conflicts then resolve the conflicts 
+I am gonna stop now, will get back to this later, this is just text so someone reading wont be able to 
+find any difference as the text will continue but its just as in form of info that i stopped after completing 
+this much task 
+
+I am back 
+
+added one more field to the player that is the active twists 
+
+realized it was redundant, now i have to remove it its good that i only kept it to only one function,
+i will do it later i will actually stop coding now  
+
+I am back and removed that reduncy now ngl i am thinking to complete this file by today only 
+i wasnt able to complete it today but tommorow i will do it surely 

@@ -23,7 +23,7 @@ async def create_room(host_sid: str, host_name: str, settings: dict) -> dict:
             "rounds": settings.get("rounds", 5),
             "draw_time": settings.get("draw_time", 80),
             "difficulty": settings.get("difficulty", "medium"),
-            "twist_intensity": settings.get("twist_intensity", "chaos"),
+            "twist_intensity": settings.get("twist_intensity", "chaos"), # mild / chaos / pure_hell
             "word_mode": settings.get("word_mode", "normal"),
             "is_private": settings.get("is_private", False),
             "competition_id": settings.get("competition_id", None),
@@ -31,12 +31,21 @@ async def create_room(host_sid: str, host_name: str, settings: dict) -> dict:
                 "pixelated_count": settings.get("pixelated_count", 1),
                 "foggy_count": settings.get("foggy_count", 1),
                 "hijack_pair_count": settings.get("hijack_pair_count", None),
+                "blind_drawers" : settings.get("blind_drawers", 1),
+                "icy_canvas_count" : settings.get("icy_canvas_count", 1),
+                "inverse_canva_count" : settings.get("inverse_canva_count", 1),
+                "mirror_only_count" : settings.get("mirror_only_count", 1),
+                "monochrome_decay_count" : settings.get("monochrome_decay_count", 1),
+                "scroll_wheel_brush_count" : settings.get("scroll_wheel_brush_count", 1),
+                "tremor_hand_count" : settings.get("tremor_hand_count", 1),
+                "turbo_mode_count" : settings.get("turbo_mode_count", 1),
+                "snail_curse_count" : settings.get("snail_curse_count", 1),
         },
         "players": {},          # sid -> player_dict (see add_player)
         "spectators": {},       # sid -> name
         "state": "lobby",       # lobby | word_select | drawing | round_end | game_end
         "current_round": 0,
-        "current_drawer_sid": None,
+        "current_drawer_sid": None, # can be multiple sid according to number of drawers, if something like collective canvas shows up
         "current_word": None,
         "current_fake_word": None,   # For Fake Word twist
         "round_start_time": None,
@@ -51,6 +60,16 @@ async def create_room(host_sid: str, host_name: str, settings: dict) -> dict:
         "thieves": [],               # list of sids designated as thieves this round
         "hijack_pairs": {},           # { controller_sid: victim_sid } — multiple pairs allowed
         "snail_positions": {},       # sid -> {x, y} current snail position per canvas
+        "pixelated_players": [],
+        "foggy_players": [],
+        "blind_drawers": [],
+        "icy_canvas_players": [],
+        "inverse_canva_players": [],
+        "mirror_only_players": [],
+        "monochrome_decay_players": [],
+        "scroll_wheel_brush_players": [],
+        "tremor_hand_players": [],
+        "turbo_mode_players": [],
         "created_at": time.time(),
         "last_activity": time.time(),
     }
@@ -104,6 +123,7 @@ async def get_public_rooms() -> list[dict]:
             })
     return result
 
+
 async def add_player(room_id: str, sid: str, name: str, is_host: bool = False) -> dict | None:
     """
     Add a player to the room's player dict
@@ -138,6 +158,7 @@ async def add_player(room_id: str, sid: str, name: str, is_host: bool = False) -
         "correct_guesses": 0,
         "times_as_drawer": 0,
         "twist_history": [],
+        "active_twists": [],
     }
     room["players"][sid] = player
     room["last_activity"] = time.time() # For tracking in future and other pourposes
@@ -299,7 +320,6 @@ def clear_round_state(room_id: str) -> None:
     room["current_fake_word"] = None
     room["round_start_time"] = None
     room["submitted_words"] = {}
-
 
 def cleanup_idle_rooms(max_idle_seconds: int = 1800) -> int:
     """

@@ -185,3 +185,6 @@ above one is kept in
 
 49. another ai suggested one, whih i have decided to keep in 
  The snail doesn't just chase your cursor position — it pathfinds along the actual stroke trail you've drawn on the canvas, using your lines like roads. Even after you lift your mouse, the snail is crawling along your previous strokes toward wherever you are now. Your own drawing becomes the thing hunting you. A dense complex drawing is a death trap — you've built the snail a highway network directly to you. Sparse minimalist drawers survive longer. If the snail reaches your cursor at any point — mid-stroke or resting — you're out.
+
+
+Well coding and actually tracking the time i realized i code far less than i think but now i am going towards the twist engine 
