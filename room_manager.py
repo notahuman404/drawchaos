@@ -40,11 +40,15 @@ async def create_room(host_sid: str, host_name: str, settings: dict) -> dict:
                 "tremor_hand_count" : settings.get("tremor_hand_count", 1),
                 "turbo_mode_count" : settings.get("turbo_mode_count", 1),
                 "snail_curse_count" : settings.get("snail_curse_count", 1),
+                "zoom_trap_count": settings.get("zoom_trap_count", 1),
+                "ten_strokes_count": settings.get("ten_strokes_count", 1), 
+                "drunk_cursor_count": settings.get("drunk_cursor_count", 1),
         },
         "players": {},          # sid -> player_dict (see add_player)
         "spectators": {},       # sid -> name
         "state": "lobby",       # lobby | word_select | drawing | round_end | game_end
         "current_round": 0,
+        "last_round_winner_sid": None,
         "current_drawer_sid": None, # can be multiple sid according to number of drawers, if something like collective canvas shows up
         "current_word": None,
         "current_fake_word": None,   # For Fake Word twist
@@ -68,10 +72,19 @@ async def create_room(host_sid: str, host_name: str, settings: dict) -> dict:
         "mirror_only_players": [],
         "monochrome_decay_players": [],
         "scroll_wheel_brush_players": [],
+"rotating_words": {}  ,  # sid -> word assigned to that player
+"rotating_votes": {}  ,  # voter_sid -> {drawing_sid: word} their guesses for who drew what
+"narrator_sid": None  ,   # the one who knows the word and gives clues
+"narrate_drawer_sid": None , # the one who draws based on clues
         "tremor_hand_players": [],
         "turbo_mode_players": [],
+        "zoom_trap_players": [],
+        "previous_word": None, 
         "created_at": time.time(),
+        "previous_drawing": {}, # sid -> base64, i will fix the mess later 
         "last_activity": time.time(),
+        "ghost_identity_votes": {}  , # voter_sid -> guessed_sid (who they think the ghost is)
+"ghost_word_reveal": False   # whether the word got guessed correctly this round
     }
     _rooms[room_id] = room 
     _invite_index[invite_code.upper()] = room_id
